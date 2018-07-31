@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Building } from '../../models/building.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BuildingsService } from '../../services/buildings.service';
 
 @Component({
   selector: 'app-single-building',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleBuildingComponent implements OnInit {
 
-  constructor() { }
+  building: Building;
+
+  constructor(private route: ActivatedRoute, private buildingsService: BuildingsService,
+              private router: Router) {}
 
   ngOnInit() {
+    this.building = new Building('', '');
+    const id = this.route.snapshot.params['id'];
+    this.buildingsService.getSingleBuilding(+id).then(
+      (building: Building) => {
+        this.building = building;
+      }
+    );
   }
 
+  onBack() {
+    this.router.navigate(['/buildings']);
+  }
 }

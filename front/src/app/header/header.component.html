@@ -1,21 +1,20 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li routerLinkActive="active">
-        <a routerLink="buildings">Buildings</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="buildings">My buildings</a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active">
-        <a routerLink="auth/signup">Sign up</a>
+      <li class="nav-item" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="auth/signup">Sign up</a>
       </li>
-      <li routerLinkActive="active">
-        <a routerLink="auth/signin">Sign in</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="auth/signin">Sign in</a>
       </li>
-      <li>
-        <a (click)="onSignOut()"
-           style="cursor:pointer"
-           *ngIf="isAuth">Log out</a>
+      <li class="nav-item" *ngIf="isAuth">
+        <a class="nav-link" (click)="onSignOut()"
+           style="cursor:pointer">Log out</a>
       </li>
     </ul>
   </div>

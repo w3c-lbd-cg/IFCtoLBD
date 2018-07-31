@@ -11,7 +11,8 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent { //} implements OnInit {
 
-  constructor(private buildingsService: BuildingsService) {
+  //constructor(private buildingsService: BuildingsService) {
+  constructor() {
     let apiKey: string = environment.apiKey;
     let authDomain: string = environment.authDomain;
     let databaseURL: string = environment.databaseURL;

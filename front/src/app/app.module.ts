@@ -16,6 +16,7 @@ import { BuildingsService } from './services/buildings.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import * as firebase from 'firebase';
+//import Datasnapshot = firebase.database.DataSnapshot;
 import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
