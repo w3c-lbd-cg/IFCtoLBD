@@ -60,3 +60,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/front/src/environments/environment.ts

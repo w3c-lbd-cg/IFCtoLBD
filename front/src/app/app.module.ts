@@ -16,7 +16,7 @@ import { BuildingsService } from './services/buildings.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import * as firebase from 'firebase';
-
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
@@ -26,7 +26,7 @@ const appRoutes: Routes = [
   { path: 'buildings/view/:id', canActivate: [AuthGuardService], component: SingleBuildingComponent },
   { path: 'not-found', component: FourOhFourComponent },
   { path: '', redirectTo: 'buildings', pathMatch: 'full' },
-  { path: '**', redirectTo: 'not-found' }     // never add some paths after this one 
+  { path: '**', redirectTo: 'not-found' }     // never add some paths after this one
 ];
 
 @NgModule({
@@ -45,6 +45,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    //config,
     ReactiveFormsModule
     //FormGroup,
     //Validators,
